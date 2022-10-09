@@ -219,6 +219,7 @@
     <Content Include="Views\Diretorios\Index.cshtml" />
     <Content Include="Views\Diretorios\Adicionar.cshtml" />
     <Content Include="Views\Diretorios\Eliminar.cshtml" />
+    <Content Include="Views\Diretorios\Editar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

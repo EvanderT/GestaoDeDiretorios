@@ -21,6 +21,8 @@ namespace GestaoDeDiretorios.Controllers
             return View(diretorios);
         }
 
+        #region:Adicionar
+
         public ActionResult Adicionar()
         {
             return View();
@@ -57,8 +59,27 @@ namespace GestaoDeDiretorios.Controllers
 
             return View();
         }
+        #endregion
 
+        #region:Editar
+        public ActionResult Editar(int id)
+        {
+            var diretorio = _db.Diretorios.Find(id);
 
+            return View(diretorio);
+        }
+
+        public ActionResult Editar(Diretorio viewModel)
+        {
+            var diretorio = _db.Diretorios.Find(viewModel.Id);
+
+            var nomePasta = new DirectoryInfo(System.IO.Path.GetDirectoryName(diretorio.Caminho)).Name;
+
+            return View(diretorio);
+        }
+        #endregion
+
+        #region:Eliminar
         public ActionResult Eliminar(int id)
         {
             var diretorio = _db.Diretorios.Find(id);
@@ -85,5 +106,6 @@ namespace GestaoDeDiretorios.Controllers
 
             }
         }
+        #endregion
     }
 }
