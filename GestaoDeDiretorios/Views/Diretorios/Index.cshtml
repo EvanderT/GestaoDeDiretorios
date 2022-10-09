@@ -1,0 +1,40 @@
+﻿@model IEnumerable<GestaoDeDiretorios.Models.Diretorio>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista de Diretorios</h2>
+
+<p>
+    @Html.ActionLink("Criar nova pasta", "Adicionar")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataCadastro)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.DataCadastro)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Editar", new { id=item.Id }, new {@class="btn btn-sm btn-warning"}) |
+            @Html.ActionLink("Detalhes", "Detalhe", new { id=item.Id }, new { @class = "btn btn-sm btn-info"}) |
+            @Html.ActionLink("Eliminar", "Eliminar", new { id=item.Id }, new { @class = "btn btn-sm btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

@@ -127,11 +127,17 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DiretoriosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Data\AppDbContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202210090645472_first-migration.cs" />
+    <Compile Include="Migrations\202210090645472_first-migration.designer.cs">
+      <DependentUpon>202210090645472_first-migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Diretorio.cs" />
     <Compile Include="Models\Entity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -210,14 +216,24 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Diretorios\Index.cshtml" />
+    <Content Include="Views\Diretorios\Adicionar.cshtml" />
+    <Content Include="Views\Diretorios\Eliminar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Media\Server\" />
+    <Folder Include="Media\Users\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202210090645472_first-migration.resx">
+      <DependentUpon>202210090645472_first-migration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
